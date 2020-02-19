@@ -1,0 +1,83 @@
+@charset "UTF-8";
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+.wrapper {
+  max-width: 1020px;
+  margin: 0 auto;
+}
+
+.visuallyhidden {
+  position: absolute;
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  left: 0;
+  top: 0;
+}
+
+.header {
+  font-family: 'Lato', Verdana, sans-serif;
+  color: #FFFFFF;
+  background-color: #2d303a;
+  height: 89px;
+  padding: 0 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+.menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu__element {
+  display: inline-block;
+}
+
+.menu__element::before {
+  content: '·';
+  display: inline-block;
+  width: 3px;
+  height: 3px;
+  color: #424657;
+  margin-left: 8px;
+  margin-right: 14px;
+}
+
+.menu__ref {
+  font-size: 12px;
+  color: #FFFFFF;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.menu__ref:hover {
+  color: #f06c64;
+}
+
+.logo {
+  cursor: pointer;
+  padding-top: 27px;
+  font-size: 27px;
+  letter-spacing: -1.8px;
+}
+
+.logo__logotype {
+  text-transform: uppercase;
+}
+
+.logo__red-star {
+  color: #f06c64;
+}
+/*# sourceMappingURL=singolo1.css.map */
