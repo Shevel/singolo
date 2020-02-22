@@ -2,6 +2,7 @@
 html, body {
   padding: 0;
   margin: 0;
+  font-family: 'Lato', Verdana, sans-serif;
 }
 
 .wrapper {
@@ -19,8 +20,8 @@ html, body {
 }
 
 .header {
-  font-family: 'Lato', Verdana, sans-serif;
   color: #FFFFFF;
+  font-weight: 700;
   background-color: #2d303a;
   height: 89px;
   padding: 0 40px;
@@ -79,5 +80,218 @@ html, body {
 
 .logo__red-star {
   color: #f06c64;
+}
+
+.line {
+  margin: 0;
+  padding: 0;
+  height: 6px;
+  border: none;
+}
+
+.line_blue {
+  background-color: #323746;
+}
+
+.line_white {
+  background-color: #FFFFFF;
+}
+
+.line_pink {
+  background-color: #ea676b;
+}
+
+.slider {
+  height: 594px;
+  position: relative;
+  background-color: #f06c64;
+  padding: 0 40px;
+}
+
+.slider__arrow {
+  cursor: pointer;
+  position: absolute;
+  height: 27px;
+  width: 16px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  top: 281px;
+}
+
+.slider__arrow:hover {
+  -webkit-box-shadow: 0px 0px 14px -4px white;
+          box-shadow: 0px 0px 14px -4px white;
+  border-radius: 5px;
+}
+
+.slider__arrow:nth-child(1) {
+  background-image: url(./assets/icon/chevl.png);
+  left: 42px;
+}
+
+.slider__arrow:nth-child(2) {
+  background-image: url(./assets/icon/chevr.png);
+  right: 40px;
+}
+
+.vertical-phone {
+  position: absolute;
+  height: 483px;
+  width: 240px;
+  background-image: url(./assets/img/PhoneVertical.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  top: 53px;
+  left: 112px;
+  z-index: 1;
+}
+
+.first-phone-image {
+  z-index: 2;
+  position: absolute;
+  width: 188px;
+  height: 333px;
+  top: 118px;
+  left: 126px;
+  background-image: url(./assets/img/wall1.png);
+  background-repeat: no-repeat;
+  background-position: -14px -135px;
+}
+
+.horizontal-phone {
+  position: absolute;
+  height: 240px;
+  width: 484px;
+  background-image: url(./assets/img/HorizontalPhone.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  top: 174px;
+  left: 425px;
+  z-index: 1;
+}
+
+.second-phone-image {
+  z-index: 2;
+  position: absolute;
+  width: 333px;
+  height: 188px;
+  top: 188px;
+  left: 485px;
+  background-image: url(./assets/img/wall2.png);
+  background-repeat: no-repeat;
+  background-position: -125px -119px;
+}
+
+.service {
+  background-color: #f2f2f2;
+  height: 494px;
+  color: #666d89;
+}
+
+.service__text {
+  font-weight: 300;
+  font-size: 18px;
+  margin: 0;
+  padding-top: 17px;
+  line-height: 1.7;
+}
+
+.service__article {
+  max-width: 300px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 34px;
+}
+
+.service__headline {
+  font-weight: 900;
+  margin: 0;
+  padding: 0;
+  letter-spacing: -0.4px;
+}
+
+.service__icon-description {
+  font-weight: 400;
+  margin: 0;
+  font-size: 12px;
+  margin-top: 8px;
+  line-height: 1.8;
+}
+
+.icon {
+  width: 59px;
+  height: 59px;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.icon_pen {
+  background-image: url(./assets/icon/pen.png);
+  position: relative;
+  left: 1px;
+}
+
+.icon_bulb {
+  background-image: url(./assets/icon/bulb.png);
+}
+
+.icon_heart {
+  background-image: url(./assets/icon/heart.png);
+  position: relative;
+  left: -1px;
+}
+
+.icon_phone {
+  background-image: url(./assets/icon/phone.png);
+  position: relative;
+  left: 1px;
+}
+
+.icon_bubble {
+  background-image: url(./assets/icon/bubble.png);
+}
+
+.icon_star {
+  background-image: url(./assets/icon/star.png);
+  position: relative;
+  left: -1px;
+}
+
+.container {
+  max-width: 940px;
+  margin: 0 auto;
+}
+
+.our-services {
+  padding: 0;
+  margin: 0;
+  padding-top: 58px;
+  font-size: 31px;
+  font-weight: 900;
+  letter-spacing: -0.7px;
+}
+
+.layout-3-column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+  padding-top: 47px;
+}
+
+.properties-container {
+  max-width: 220px;
+  margin-top: -4px;
 }
 /*# sourceMappingURL=singolo1.css.map */
