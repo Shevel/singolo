@@ -728,24 +728,4 @@ html, body {
   margin: 23px 0 0 1px;
   letter-spacing: -0.6px;
 }
-
-.line {
-  max-width: 1020px;
-  margin: 0 auto;
-  padding: 0;
-  height: 6px;
-  border: none;
-}
-
-.line_blue {
-  background-color: #323746;
-}
-
-.line_white {
-  background-color: #FFFFFF;
-}
-
-.line_pink {
-  background-color: #ea676b;
-}
 /*# sourceMappingURL=style.css.map */
