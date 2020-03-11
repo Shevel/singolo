@@ -76,7 +76,11 @@ html, body {
 }
 
 .active {
-  text-shadow: 0px 0px 10px #FFF9E3;
+  text-shadow: 0px 0px 10px #ffffff;
+}
+
+.bordered {
+  border: 5px solid #F06C64;
 }
 
 .menu__element:first-child::before {
@@ -378,6 +382,8 @@ html, body {
 .portfolio__image {
   width: 220px;
   height: 187px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .portfolio__images {
