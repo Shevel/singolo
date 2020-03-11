@@ -3,11 +3,16 @@ html, body {
   padding: 0;
   margin: 0;
   font-family: 'Lato', Verdana, sans-serif;
+  scroll-behavior: smooth;
 }
 
 .wrapper {
   max-width: 940px;
   margin: 0 auto;
+}
+
+.display-none {
+  display: none;
 }
 
 .visuallyhidden {
@@ -68,6 +73,10 @@ html, body {
 
 .menu__ref:hover {
   color: #f06c64;
+}
+
+.active {
+  text-shadow: 0px 0px 10px #FFF9E3;
 }
 
 .menu__element:first-child::before {
@@ -154,6 +163,7 @@ html, body {
 }
 
 .vertical-phone {
+  cursor: pointer;
   position: absolute;
   height: 483px;
   width: 240px;
@@ -178,6 +188,7 @@ html, body {
 }
 
 .horizontal-phone {
+  cursor: pointer;
   position: absolute;
   height: 240px;
   width: 484px;

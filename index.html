@@ -8,7 +8,7 @@
   <title>Singolo. Part 3</title>
 </head>
 <body>
-  <header class="header">
+  <header id="home" class="header">
     <div class="wrapper header__wrapper">
       <div class="logo">
         <h1 class="visuallyhidden">Singolo</h1>
@@ -16,21 +16,21 @@
         <span class="logo__red-star">*</span>
       </div>
       <nav>
-        <ul class="menu">
+        <ul id="menu" class="menu">
           <li class="menu__element">
-            <a class="menu__ref" href="#">Home</a>
+            <a class="menu__ref" href="#home">Home</a>
           </li>
           <li class="menu__element">
-            <a class="menu__ref" href="#">Services</a>
+            <a class="menu__ref" href="#service">Services</a>
           </li>
           <li class="menu__element">
-            <a class="menu__ref" href="#">Portfolio</a>
+            <a class="menu__ref" href="#portfolio">Portfolio</a>
           </li>
           <li class="menu__element">
-            <a class="menu__ref" href="#">About</a>
+            <a class="menu__ref" href="#about">About</a>
           </li>
           <li class="menu__element">
-            <a class="menu__ref" href="#">Contact</a>
+            <a class="menu__ref" href="#contact">Contact</a>
           </li>
         </ul>
       </nav>
@@ -42,11 +42,11 @@
       <div class="slider__arrow"></div>
       <div class="vertical-phone"></div>
       <div class="horizontal-phone"></div>
-      <div class="first-phone-image"></div>
-      <div class="second-phone-image"></div>
+      <div  id="phone1" class="first-phone-image"></div>
+      <div id="phone2" class="second-phone-image"></div>
   </div>
   <hr class="line line_pink">
-  <section class="service">
+  <section id="service" class="service">
     <div class="wrapper">
       <h2 class="our-services headline">Our Services</h2>
       <p class="service__text">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
@@ -97,7 +97,7 @@
     </div>
     </section>
     <hr class="line line_white">
-    <section class="portfolio">
+    <section id="portfolio" class="portfolio">
       <div class="wrapper">
         <h2 class="portfolio__header headline">Portfolio</h2>
         <p class="portfolio__text text">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
@@ -126,7 +126,7 @@
       </div>
     </section>
     <hr class="line line_blue">
-    <section class="about-us">
+    <section id="about" class="about-us">
       <div class="wrapper">
         <h2 class="about-us__header headline">About Us</h2>
         <p class="about-us__text text">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
@@ -168,7 +168,7 @@
       </div>
     </section>
     <hr class="line line_white">
-    <section class="get-a-quote">
+    <section id="contact" class="get-a-quote">
       <div class="wrapper">
         <h2 class="get-a-quote__header headline">Get a Quote</h2>
         <p class="get-a-quote__text text">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
@@ -211,5 +211,6 @@
         </div>
       </div>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
