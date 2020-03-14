@@ -22,12 +22,87 @@ PORTFOLIO_IMAGES.addEventListener('click', (event) => {
   event.target.classList.add('bordered');
 });
 
-// Tags in portfolio
+// SORT img in portfolio by tags
 
 PORTFOLIO_TAGS.addEventListener('click', (event) => {
   PORTFOLIO_TAGS.querySelectorAll('.tag').forEach(el => el.classList.remove('active'));
   if (event.target.tagName != 'SPAN') return;
-  event.target.classList.add('active');
+  if (event.target.textContent == 'Artwork') {
+    event.target.classList.add('active');
+    const collection = PORTFOLIO_IMAGES.querySelectorAll('.portfolio__image');
+    const arrayCollection = Array.prototype.slice.call(collection, 0);
+    arrayCollection.sort((a,b) => {
+      if (a.src > b.src) {
+        return -1;
+      }
+      if (a.alt < b.alt) {
+        return 1;
+      }
+      return 0;
+    });
+    PORTFOLIO_IMAGES.innerHTML = '';
+    let sortedCollection = toNodeList(arrayCollection);
+    while(sortedCollection.length) {
+      PORTFOLIO_IMAGES.appendChild(sortedCollection[0]);
+    }
+  }
+  if (event.target.textContent == 'All') {
+    event.target.classList.add('active');
+    const collection = PORTFOLIO_IMAGES.querySelectorAll('.portfolio__image');
+    const arrayCollection = Array.prototype.slice.call(collection, 0);
+    arrayCollection.sort((a,b) => {
+      if (a.src < b.src) {
+        return -1;
+      }
+      if (a.alt > b.alt) {
+        return 1;
+      }
+      return 0;
+    });
+    PORTFOLIO_IMAGES.innerHTML = '';
+    let sortedCollection = toNodeList(arrayCollection);
+    while(sortedCollection.length) {
+      PORTFOLIO_IMAGES.appendChild(sortedCollection[0]);
+    }
+  }
+  if (event.target.textContent == 'Web Design') {
+    event.target.classList.add('active');
+    const collection = PORTFOLIO_IMAGES.querySelectorAll('.portfolio__image');
+    const arrayCollection = Array.prototype.slice.call(collection, 0);
+    arrayCollection.sort((a,b) => {
+      if (a.alt < b.alt) {
+        return -1;
+      }
+      if (a.alt > b.alt) {
+        return 1;
+      }
+      return 0;
+    });
+    PORTFOLIO_IMAGES.innerHTML = '';
+    let sortedCollection = toNodeList(arrayCollection);
+    while(sortedCollection.length) {
+      PORTFOLIO_IMAGES.appendChild(sortedCollection[0]);
+    }
+  }
+  if (event.target.textContent == 'Graphic Design') {
+    event.target.classList.add('active');
+    const collection = PORTFOLIO_IMAGES.querySelectorAll('.portfolio__image');
+    const arrayCollection = Array.prototype.slice.call(collection, 0);
+    arrayCollection.sort((a,b) => {
+      if (a.alt > b.alt) {
+        return -1;
+      }
+      if (a.alt < b.alt) {
+        return 1;
+      }
+      return 0;
+    });
+    PORTFOLIO_IMAGES.innerHTML = '';
+    let sortedCollection = toNodeList(arrayCollection);
+    while(sortedCollection.length) {
+      PORTFOLIO_IMAGES.appendChild(sortedCollection[0]);
+    }
+  }
 });
 
 // Switch on/off image in phones
@@ -67,24 +142,4 @@ const toNodeList = function(arrayOfNodes) {
     fragment.appendChild(item.cloneNode());
   });
   return fragment.childNodes;
-}; 
-
-//
-
-const collection = PORTFOLIO_IMAGES.querySelectorAll('.portfolio__image');
-const arrayCollection = Array.prototype.slice.call(collection, 0);
-
-arrayCollection.sort((a,b) => {
-  if (a.src > b.src) {
-    return -1;
-  }
-  if (a.alt < b.alt) {
-    return 1;
-  }
-  return 0;
-});
-PORTFOLIO_IMAGES.innerHTML = '';
-let sortedCollection = toNodeList(arrayCollection);
-while(sortedCollection.length) {
-  PORTFOLIO_IMAGES.appendChild(sortedCollection[0]);
-}
+};
