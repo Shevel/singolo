@@ -283,8 +283,8 @@ html, body {
 .vertical-phone {
   cursor: pointer;
   position: absolute;
-  height: 483px;
-  width: 240px;
+  height: 458px;
+  width: 216px;
   background-image: url(./assets/img/PhoneVertical.png);
   background-size: 100%;
   background-repeat: no-repeat;
@@ -308,8 +308,8 @@ html, body {
 .horizontal-phone {
   cursor: pointer;
   position: absolute;
-  height: 240px;
-  width: 484px;
+  height: 216px;
+  width: 458px;
   background-image: url(./assets/img/HorizontalPhone.png);
   background-size: 100%;
   background-repeat: no-repeat;
@@ -328,6 +328,26 @@ html, body {
   background-image: url(./assets/img/wall2.png);
   background-repeat: no-repeat;
   background-position: -125px -119px;
+}
+
+.vertical-phone-shadow {
+  position: absolute;
+  height: 483px;
+  width: 240px;
+  background-image: url(./assets/img/phone-vertical-shadow.png);
+  background-repeat: no-repeat;
+  top: 53px;
+  left: 112px;
+}
+
+.horizontal-phone-shadow {
+  position: absolute;
+  height: 240px;
+  width: 483px;
+  background-image: url(./assets/img/phone-horizontal-shadow.png);
+  background-repeat: no-repeat;
+  top: 174px;
+  right: 111px;
 }
 
 .service {
