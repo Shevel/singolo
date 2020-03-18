@@ -5,29 +5,28 @@ const PORTFOLIO_IMAGES = document.querySelector('.portfolio__images');
 const PORTFOLIO_TAGS = document.querySelector('.portfolio__tags');
 const SUBMIT_BUTTON = document.querySelector('#submit-btn');
 const CLOSE_BUTTON = document.querySelector('#close-btn');
-const slides = document.querySelectorAll('.slide');
+const SLIDES = document.querySelectorAll('.slide');
+const FORM = document.querySelector('.form');
 let currentSlide = 0;
 let isEnabled = true;
 
-//Active Navigation bar 
-
-MENU.addEventListener('click', (event) => {
-  MENU.querySelectorAll('.menu__ref').forEach(el => el.classList.remove('active'));
-  if (event.target.tagName != 'A') return;
-  event.target.classList.add('active');
-});
+document.addEventListener('scroll',onScroll);
 
 //Add Border on images in portfolio by click
 
-PORTFOLIO_IMAGES.addEventListener('click', (event) => {
+PORTFOLIO_IMAGES.addEventListener('click', onPortfolioImageClick);
+
+function onPortfolioImageClick(event) {
   PORTFOLIO_IMAGES.querySelectorAll('.portfolio__image').forEach(el => el.classList.remove('bordered'));
   if (event.target.tagName != 'IMG') return;
   event.target.classList.add('bordered');
-});
+}
 
 // SORT img in portfolio by tags
 
-PORTFOLIO_TAGS.addEventListener('click', (event) => {
+PORTFOLIO_TAGS.addEventListener('click', onPortfolioTagClick);
+
+function onPortfolioTagClick(event) {
   PORTFOLIO_TAGS.querySelectorAll('.tag').forEach(el => el.classList.remove('active'));
   if (event.target.tagName != 'SPAN') return;
   if (event.target.textContent == 'Artwork') {
@@ -106,7 +105,7 @@ PORTFOLIO_TAGS.addEventListener('click', (event) => {
       PORTFOLIO_IMAGES.appendChild(sortedCollection[0]);
     }
   }
-});
+}
 
 // Switch on/off image in phones
 
@@ -115,7 +114,9 @@ HORIZONTAL_PHONE.addEventListener('click', () => document.getElementById('phone2
 
 // Message in Form by Submit
 
-SUBMIT_BUTTON.addEventListener('click', () => {
+SUBMIT_BUTTON.addEventListener('click', onSubmitClick);
+
+function onSubmitClick() {
   const subject = document.getElementById('subject').value.toString().trim();
   const describe = document.getElementById('describe').value.toString().trim();
   if (subject) {
@@ -129,26 +130,30 @@ SUBMIT_BUTTON.addEventListener('click', () => {
     document.getElementById('description').innerText = 'Без описания';
   }
   document.getElementById('message-block').classList.remove('hidden');
-});
+}
 
-CLOSE_BUTTON.addEventListener('click', () => {
+CLOSE_BUTTON.addEventListener('click', onCloseModal);
+
+function onCloseModal() {
   document.getElementById('theme').innerText = '';
   document.getElementById('description').innerText = '';
   document.getElementById('message-block').classList.add('hidden');
-});
+  FORM.reset();
+}
 
 //Converting array to nodelist collection
 
-const toNodeList = function(arrayOfNodes) { 
+function toNodeList(arrayOfNodes) { 
   let fragment = document.createDocumentFragment();
   arrayOfNodes.forEach(function(item){
     fragment.appendChild(item.cloneNode());
   });
   return fragment.childNodes;
-};
+}
+
  // Slider-carousel
 function changeCurrentItem(n) {
-  currentSlide = (n + slides.length) % slides.length;
+  currentSlide = (n + SLIDES.length) % SLIDES.length;
 }
 
 function previousItem(n) {
@@ -163,13 +168,13 @@ function nextItem(n) {
   showItem('from-right');
 }
 
-document.querySelector('.slider__arrow.left').addEventListener('click',function () {
+document.querySelector('.slider__arrow.left').addEventListener('click', function() {
   if (isEnabled) {
     previousItem(currentSlide);
   }
 });
 
-document.querySelector('.slider__arrow.right').addEventListener('click',function () {
+document.querySelector('.slider__arrow.right').addEventListener('click', function() {
   if (isEnabled) {
     nextItem(currentSlide);
   }
@@ -177,17 +182,33 @@ document.querySelector('.slider__arrow.right').addEventListener('click',function
 
 function hideItem(direction) {
   isEnabled = false;
-  slides[currentSlide].classList.add(direction);
-  slides[currentSlide].addEventListener('animationend', function() {
+  SLIDES[currentSlide].classList.add(direction);
+  SLIDES[currentSlide].addEventListener('animationend', function() {
     this.classList.remove('visible', direction);
   });
 }
 
 function showItem(direction) {
-  slides[currentSlide].classList.add('next', direction);
-  slides[currentSlide].addEventListener('animationend', function() {
+  SLIDES[currentSlide].classList.add('next', direction);
+  SLIDES[currentSlide].addEventListener('animationend', function() {
     this.classList.remove('next', direction);
     this.classList.add('visible');
     isEnabled = true;
   });
 }
+ // ----------------------- activated menu links on scroll
+ function onScroll(e) {
+   const currentPosition = window.scrollY;
+   const blocks = document.querySelectorAll('body > header , body > section ,body > footer ,body > div');
+   const links = document.querySelectorAll('#menu a');
+   blocks.forEach((element) => {
+     if (element.offsetTop <= currentPosition && (element.offsetTop + element.offsetHeight) > currentPosition) {
+       links.forEach((a) => {
+         a.classList.remove('active');
+         if (element.getAttribute('id') === a.getAttribute('href').substring(1)) {
+           a.classList.add('active');
+         }
+       })
+     }
+   });
+ }
