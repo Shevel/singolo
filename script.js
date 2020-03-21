@@ -7,10 +7,9 @@ const SUBMIT_BUTTON = document.querySelector('#submit-btn');
 const CLOSE_BUTTON = document.querySelector('#close-btn');
 const SLIDES = document.querySelectorAll('.slide');
 const FORM = document.querySelector('.form');
+const HEADER = document.querySelector('.header');
 let currentSlide = 0;
 let isEnabled = true;
-
-document.addEventListener('scroll',onScroll);
 
 //Add Border on images in portfolio by click
 
@@ -199,7 +198,7 @@ function showItem(direction) {
  // ----------------------- activated menu links on scroll
  function onScroll(e) {
    const currentPosition = window.scrollY;
-   const blocks = document.querySelectorAll('body > header , body > section ,body > footer ,body > div');
+   const blocks = document.querySelectorAll('body > header , main > section, main > footer, main > div');
    const links = document.querySelectorAll('#menu a');
    blocks.forEach((element) => {
      if (element.offsetTop <= currentPosition && (element.offsetTop + element.offsetHeight) > currentPosition) {
@@ -212,3 +211,16 @@ function showItem(direction) {
      }
    });
  }
+
+ document.onscroll = function() {OnScrollFixedHeader()};
+
+ function OnScrollFixedHeader() {
+  const sticky = HEADER.offsetTop;
+   if (window.pageYOffset > sticky) {
+    HEADER.classList.add("sticky");
+    } else {
+      HEADER.classList.remove("sticky");
+  }
+}
+
+document.addEventListener('scroll',onScroll);
