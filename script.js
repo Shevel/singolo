@@ -1,6 +1,6 @@
 const MENU = document.getElementById('menu');
-const VERTICAL_PHONE = document.querySelector('.vertical-phone');
-const HORIZONTAL_PHONE = document.querySelector('.horizontal-phone');
+const VERTICAL_PHONE = document.querySelector('.vertical-phone-body');
+const HORIZONTAL_PHONE = document.querySelector('.horizontal-phone-body');
 const PORTFOLIO_IMAGES = document.querySelector('.portfolio__images');
 const PORTFOLIO_TAGS = document.querySelector('.portfolio__tags');
 const SUBMIT_BUTTON = document.querySelector('#submit-btn');
@@ -8,8 +8,32 @@ const CLOSE_BUTTON = document.querySelector('#close-btn');
 const SLIDES = document.querySelectorAll('.slide');
 const FORM = document.querySelector('.form');
 const HEADER = document.querySelector('.header');
+const BURGER_BTN = document.querySelector('.burger-btn');
+const MENU_ELEMENT = document.querySelector('.menu__ref');
 let currentSlide = 0;
 let isEnabled = true;
+
+function toggleMobileMenu() {
+  MENU.classList.toggle('show-menu');
+}
+
+function rotateBurgerIcon() {
+  BURGER_BTN.classList.toggle('rotate');
+}
+
+MENU.addEventListener('click',(e) => {
+  if(e.target.classList.contains('menu__ref')) {
+    toggleMobileMenu();
+    rotateBurgerIcon()
+   } else{
+     0;
+   }
+});
+
+BURGER_BTN.addEventListener('click', () => {
+  rotateBurgerIcon();
+  toggleMobileMenu();
+});
 
 //Add Border on images in portfolio by click
 
@@ -108,8 +132,8 @@ function onPortfolioTagClick(event) {
 
 // Switch on/off image in phones
 
-VERTICAL_PHONE.addEventListener('click', () => document.getElementById('phone1').classList.toggle('display-none'));
-HORIZONTAL_PHONE.addEventListener('click', () => document.getElementById('phone2').classList.toggle('display-none'));
+VERTICAL_PHONE.addEventListener('click', () => document.getElementById('phone1').classList.toggle('visible'));
+HORIZONTAL_PHONE.addEventListener('click', () => document.getElementById('phone2').classList.toggle('visible'));
 
 // Message in Form by Submit
 
