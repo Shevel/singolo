@@ -143,14 +143,14 @@ function onSubmitClick() {
   const subject = document.getElementById('subject').value.toString().trim();
   const describe = document.getElementById('describe').value.toString().trim();
   if (subject) {
-    document.getElementById('theme').innerText = `Тема: ${subject}`;
+    document.getElementById('theme').innerText = `Subject: ${subject}`;
   } else {
-    document.getElementById('theme').innerText = 'Без темы';
+    document.getElementById('theme').innerText = 'No subject';
   }
   if (describe) {
-    document.getElementById('description').innerText = `Описание: ${describe}`;
+    document.getElementById('description').innerText = `Description: ${describe}`;
   } else {
-    document.getElementById('description').innerText = 'Без описания';
+    document.getElementById('description').innerText = 'No description';
   }
   document.getElementById('message-block').classList.remove('hidden');
 }

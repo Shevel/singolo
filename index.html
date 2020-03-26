@@ -10,6 +10,11 @@
 <body>
   <header id="home" class="header">
     <div class="wrapper header__wrapper">
+      <div class="burger-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
       <div class="logo">
         <h1 class="visuallyhidden">Singolo</h1>
         <span class="logo__logotype">Singolo</span>
@@ -40,15 +45,12 @@
     <div id="carousel" class="slider">
     <div class="slider__arrow left"></div>
     <div class="slider__arrow right"></div>
-    <div class="first-slide slide visible">
-        <div class="vertical-phone"></div>
-        <div class="horizontal-phone"></div>
-        <div class="vertical-phone-shadow"></div>
-        <div class="horizontal-phone-shadow"></div>
-        <div id="phone1" class="first-phone-image phone"></div>
-        <div id="phone2" class="second-phone-image phone"></div>
-    </div>
-    <div class="second-slide slide"></div>
+    <img src="./assets/img/Slide-1.png" alt="slide1" class="first-slide slide visible">
+    <img src="./assets/img/Slider.png" alt="slide2" class="second-slide slide hidden">
+    <div id="phone1" class="first-phone-image phone"></div>
+    <div id="phone2" class="second-phone-image phone"></div>
+    <div class="vertical-phone-body"></div>
+    <div class="horizontal-phone-body"></div>
     </div>
     <section id="service" class="service">
     <div class="wrapper">
@@ -171,17 +173,17 @@
       <div class="wrapper">
         <h2 class="get-a-quote__header headline">Get a Quote</h2>
         <p class="get-a-quote__text text">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-        <div class="layout-2-column">
+        <div class="layout-2-column get-a-quote__form">
           <form class="form" action="" onsubmit="return false">
-            <input class="form__name input colored" type="text" name="name" placeholder="Name (Required)" required>
-            <input class="form__email input colored" type="email" name="email" placeholder="Email (Required)" required>
-            <input id="subject" class="form__subject input colored" type="text" name="subject" placeholder="Subject">
-            <textarea id="describe" class="form__describe-area describe-area colored" name="describe-area" placeholder="Describe your project in detail..."></textarea>
-            <input id="submit-btn" class="form__button button colored" type="submit" value="Submit">
+            <input class="form__name input" type="text" name="name" placeholder="Name (Required)" required>
+            <input class="form__email input" type="email" name="email" placeholder="Email (Required)" required>
+            <input id="subject" class="form__subject input" type="text" name="subject" placeholder="Subject">
+            <textarea id="describe" class="form__describe-area input describe-area " name="describe-area" placeholder="Describe your project in detail..."></textarea>
+            <input id="submit-btn" class="form__button button " type="submit" value="Send">
           </form>
           <div id="message-block" class="hidden">
             <div id="message">
-              <p><span>Письмо отправлено</span></p>
+              <p><span>The letter was sent</span></p>
               <p><span id="theme"></span></p>
               <p><span id="description"></span></p>
               <button id="close-btn" type="submit">Ok</button>
@@ -196,7 +198,7 @@
             </div>
             <div class="contacts__line">
               <div class="contacts__icon-phone"></div>
-              <a class="contacts__phone" href="tel:+03528 331 86 35 ">03528 331 86 35 </a>
+              <a class="contacts__phone" href="tel:+035283318635 ">03528 331 86 35 </a>
             </div>
             <div class="contacts__line">
               <div class="contacts__icon-mail"></div>
@@ -208,7 +210,6 @@
     </section>
     <footer id="footer" class="footer">
       <div class="wrapper footer__wrapper">
-        <p class="copyright text">© Copyright 2013 · by PSDchat.com</p>
         <div class="footer__socials">
           <span class="socials__link link link_fb"></span>
           <span class="socials__link link link_google-plus"></span>
