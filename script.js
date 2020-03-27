@@ -145,6 +145,14 @@ function switchOnOfScreen(e) {
   if (e.classList.contains('horizontal-phone-body')) {
     SECOND_PHONE_SCREEN.classList.toggle('visible');
   }
+  if(e.classList.contains('slider__arrow') && !document.querySelector('.second-slide').classList.contains('visible')) {
+    VERTICAL_PHONE.style.display = 'none';
+    HORIZONTAL_PHONE.style.display = 'none';
+  }
+  if(e.classList.contains('slider__arrow') && document.querySelector('.second-slide').classList.contains('visible')) {
+    VERTICAL_PHONE.style.display = 'block';
+    HORIZONTAL_PHONE.style.display = 'block';
+  } 
 }
 
 // Message in Form by Submit
