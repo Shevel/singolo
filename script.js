@@ -10,6 +10,9 @@ const FORM = document.querySelector('.form');
 const HEADER = document.querySelector('.header');
 const BURGER_BTN = document.querySelector('.burger-btn');
 const MENU_ELEMENT = document.querySelector('.menu__ref');
+const SLIDER = document.querySelector('.slider');
+const FIRST_PHONE_SCREEN = document.getElementById('phone1');
+const SECOND_PHONE_SCREEN = document.getElementById('phone2');
 let currentSlide = 0;
 let isEnabled = true;
 
@@ -132,8 +135,17 @@ function onPortfolioTagClick(event) {
 
 // Switch on/off image in phones
 
-VERTICAL_PHONE.addEventListener('click', () => document.getElementById('phone1').classList.toggle('visible'));
-HORIZONTAL_PHONE.addEventListener('click', () => document.getElementById('phone2').classList.toggle('visible'));
+SLIDER.addEventListener('click', (e) => switchOnOfScreen(e.target));
+
+function switchOnOfScreen(e) {
+  console.log(e);
+  if (e.classList.contains('vertical-phone-body')) {
+    FIRST_PHONE_SCREEN.classList.toggle('visible');
+  }
+  if (e.classList.contains('horizontal-phone-body')) {
+    SECOND_PHONE_SCREEN.classList.toggle('visible');
+  }
+}
 
 // Message in Form by Submit
 
@@ -183,12 +195,16 @@ function previousItem(n) {
   hideItem('to-right');
   changeCurrentItem(n - 1);
   showItem('from-left');
+  FIRST_PHONE_SCREEN.classList.remove('visible');
+  SECOND_PHONE_SCREEN.classList.remove('visible');
 }
 
 function nextItem(n) {
   hideItem('to-left');
   changeCurrentItem(n + 1);
   showItem('from-right');
+  FIRST_PHONE_SCREEN.classList.remove('visible');
+  SECOND_PHONE_SCREEN.classList.remove('visible');
 }
 
 document.querySelector('.slider__arrow.left').addEventListener('click', function() {

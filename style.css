@@ -314,9 +314,8 @@ body {
 }
 
 .bordered {
-  border: 5px solid #F06C64;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  -webkit-box-shadow: 0px 0px 0px 5px #f06c64;
+          box-shadow: 0px 0px 0px 5px #f06c64;
 }
 
 .menu__element:first-child::before {
@@ -455,7 +454,7 @@ body {
   position: absolute;
   height: 31.9%;
   width: 32.7%;
-  top: 31.9%;
+  top: 31.83%;
   left: 47.5%;
   background-color: black;
   border-radius: 3px;
@@ -758,6 +757,10 @@ body {
   width: 23.405%;
   height: 100%;
   margin-bottom: 20px;
+  -webkit-transition: -webkit-box-shadow 0.3s;
+  transition: -webkit-box-shadow 0.3s;
+  transition: box-shadow 0.3s;
+  transition: box-shadow 0.3s, -webkit-box-shadow 0.3s;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1019px) {
