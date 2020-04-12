@@ -5,48 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
-  <title>Singolo</title>
+  <title>Singolo. Part 3</title>
 </head>
 <body>
-  <header class="header">
+  <header id="home" class="header">
     <div class="wrapper header__wrapper">
+      <div class="burger-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
       <div class="logo">
         <h1 class="visuallyhidden">Singolo</h1>
         <span class="logo__logotype">Singolo</span>
         <span class="logo__red-star">*</span>
       </div>
       <nav>
-        <ul class="menu">
+        <ul id="menu" class="menu">
           <li class="menu__element">
-            <a class="menu__ref" href="#">Home</a>
+            <a class="menu__ref" href="#carousel">Home</a>
           </li>
           <li class="menu__element">
-            <a class="menu__ref" href="#">Services</a>
+            <a class="menu__ref" href="#service">Services</a>
           </li>
           <li class="menu__element">
-            <a class="menu__ref" href="#">Portfolio</a>
+            <a class="menu__ref" href="#portfolio">Portfolio</a>
           </li>
           <li class="menu__element">
-            <a class="menu__ref" href="#">About</a>
+            <a class="menu__ref" href="#about">About</a>
           </li>
           <li class="menu__element">
-            <a class="menu__ref" href="#">Contact</a>
+            <a class="menu__ref" href="#contact">Contact</a>
           </li>
         </ul>
       </nav>
     </div>
   </header>
-  <hr class="line line_blue">
-  <div class="slider">
-      <div class="slider__arrow"></div>
-      <div class="slider__arrow"></div>
-      <div class="vertical-phone"></div>
-      <div class="horizontal-phone"></div>
-      <div class="first-phone-image"></div>
-      <div class="second-phone-image"></div>
-  </div>
-  <hr class="line line_pink">
-  <section class="service">
+  <main class="main">
+    <div id="carousel" class="slider">
+    <div class="slider__arrow left"></div>
+    <div class="slider__arrow right"></div>
+    <img src="./assets/img/Slide-1.png" alt="slide1" class="first-slide slide visible">
+    <img src="./assets/img/Slider.png" alt="slide2" class="second-slide slide hidden">
+    <div id="phone1" class="first-phone-image phone"></div>
+    <div id="phone2" class="second-phone-image phone"></div>
+    <div class="vertical-phone-body"></div>
+    <div class="horizontal-phone-body"></div>
+    </div>
+    <section id="service" class="service">
     <div class="wrapper">
       <h2 class="our-services headline">Our Services</h2>
       <p class="service__text">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
@@ -96,13 +102,12 @@
       </div>
     </div>
     </section>
-    <hr class="line line_white">
-    <section class="portfolio">
+    <section id="portfolio" class="portfolio">
       <div class="wrapper">
         <h2 class="portfolio__header headline">Portfolio</h2>
         <p class="portfolio__text text">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
         <div class="portfolio__tags">
-          <span class="tag tag_selected">All</span>
+          <span class="tag">All</span>
           <span class="tag">Web Design</span>
           <span class="tag">Graphic Design</span>
           <span class="tag">Artwork</span>
@@ -120,13 +125,10 @@
           <img src="./assets/img/row3/2.jpg" alt="text" class="portfolio__image">
           <img src="./assets/img/row3/3.jpg" alt="white monster" class="portfolio__image">
           <img src="./assets/img/row3/4.jpg" alt="scales" class="portfolio__image">
-          <img src="./assets/img/row3/4.jpg" alt="scales" class="portfolio__image">
-          <img src="./assets/img/row3/4.jpg" alt="scales" class="portfolio__image">
         </div>
       </div>
     </section>
-    <hr class="line line_blue">
-    <section class="about-us">
+    <section id="about" class="about-us">
       <div class="wrapper">
         <h2 class="about-us__header headline">About Us</h2>
         <p class="about-us__text text">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
@@ -167,19 +169,26 @@
         </div>
       </div>
     </section>
-    <hr class="line line_white">
-    <section class="get-a-quote">
+    <section id="contact" class="get-a-quote">
       <div class="wrapper">
         <h2 class="get-a-quote__header headline">Get a Quote</h2>
         <p class="get-a-quote__text text">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-        <div class="layout-2-column">
-          <form class="form" action="">
-            <input class="form__name input colored" type="text" name="name" placeholder="Name (Required)" required>
-            <input class="form__email input colored" type="email" name="email" placeholder="Email (Required)" required>
-            <input class="form__subject input colored" type="text" name="subject" placeholder="Subject">
-            <textarea class="form__describe-area describe-area colored" name="describe-area" id="describe" placeholder="Describe your project in detail..."></textarea>
-            <input class="form__button button colored" type="submit" value="Submit">
+        <div class="layout-2-column get-a-quote__form">
+          <form class="form" action="" onsubmit="return false">
+            <input class="form__name input" type="text" name="name" placeholder="Name (Required)" required>
+            <input class="form__email input" type="email" name="email" placeholder="Email (Required)" required>
+            <input id="subject" class="form__subject input" type="text" name="subject" placeholder="Subject">
+            <textarea id="describe" class="form__describe-area input describe-area " name="describe-area" placeholder="Describe your project in detail..."></textarea>
+            <input id="submit-btn" class="form__button button " type="submit" value="Send">
           </form>
+          <div id="message-block" class="hidden">
+            <div id="message">
+              <p><span>The letter was sent</span></p>
+              <p><span id="theme"></span></p>
+              <p><span id="description"></span></p>
+              <button id="close-btn" type="submit">Ok</button>
+            </div>
+          </div>
           <article class="contacts">
             <h3 class="contacts__information">Contact Information</h3>
             <p class="contacts__text text">Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus. Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis.</p>
@@ -189,7 +198,7 @@
             </div>
             <div class="contacts__line">
               <div class="contacts__icon-phone"></div>
-              <a class="contacts__phone" href="tel:+03528 331 86 35 ">03528 331 86 35 </a>
+              <a class="contacts__phone" href="tel:+035283318635 ">03528 331 86 35 </a>
             </div>
             <div class="contacts__line">
               <div class="contacts__icon-mail"></div>
@@ -199,10 +208,9 @@
         </div>
       </div>
     </section>
-    <hr class="line line_pink">
-    <footer class="footer">
+    <footer id="footer" class="footer">
       <div class="wrapper footer__wrapper">
-        <p class="copyright text">© Copyright 2013 · by PSDchat.com</p>
+        <p class="copyright text">© Copyright 2013</p>
         <div class="footer__socials">
           <span class="socials__link link link_fb"></span>
           <span class="socials__link link link_google-plus"></span>
@@ -211,5 +219,7 @@
         </div>
       </div>
     </footer>
+  </main>
+  <script src="script.js"></script>
 </body>
 </html>
