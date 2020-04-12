@@ -1,2 +1,2 @@
-# Singolo. Part 3
+# Singolo Page
 [Deployed Singolo Page](https://shevel.github.io/singolo)
