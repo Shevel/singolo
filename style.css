@@ -1110,7 +1110,6 @@ body {
             flex-direction: column;
   }
 }
-
 .button {
   width: 22%;
   min-width: 135px;
@@ -1120,7 +1119,7 @@ body {
   margin: 0 0 16px 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background-color: #FBC65F;
+  background-color: rgb(148, 148, 148);
   font-family: 'Lato';
   font-style: normal;
   font-weight: bold;
@@ -1142,6 +1141,10 @@ body {
   cursor: pointer;
   -webkit-box-shadow: inset 0px 0px 10px -3px white;
           box-shadow: inset 0px 0px 10px -3px white;
+}
+
+.yellow {
+  background-color: #FBC65F;
 }
 
 .form {

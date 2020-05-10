@@ -157,9 +157,25 @@ function switchOnOfScreen(e) {
 
 // Message in Form by Submit
 
-SUBMIT_BUTTON.addEventListener('click', onSubmitClick);
+SUBMIT_BUTTON.addEventListener('click', (e)=> {onSubmitClick(e)});
 
-function onSubmitClick() {
+FORM.addEventListener('keydown', onKeyDownHandler);
+
+function onKeyDownHandler() {
+  const name = document.querySelector('.form__name').value.toString().trim();
+  const mail = document.querySelector('.form__email').value.toString().trim();
+  if (name && mail) {
+    SUBMIT_BUTTON.classList.add('yellow');
+  }
+}
+
+function onSubmitClick(event) {
+  event.preventDefault();
+  const name = document.querySelector('.form__name').value.toString().trim();
+  const mail = document.querySelector('.form__email').value.toString().trim();
+  if(!name || ! mail) {
+	  return;
+  }
   const subject = document.getElementById('subject').value.toString().trim();
   const describe = document.getElementById('describe').value.toString().trim();
   if (subject) {
@@ -182,6 +198,7 @@ function onCloseModal() {
   document.getElementById('description').innerText = '';
   document.getElementById('message-block').classList.add('hidden');
   FORM.reset();
+  SUBMIT_BUTTON.classList.remove('yellow');
 }
 
 //Converting array to nodelist collection
