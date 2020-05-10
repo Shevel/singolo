@@ -364,6 +364,7 @@ body {
   max-height: 594px;
   position: relative;
   background-color: #f06c64;
+  overflow: hidden;
 }
 
 .slider__arrow {
