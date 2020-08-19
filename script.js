@@ -13,6 +13,8 @@ const MENU_ELEMENT = document.querySelector('.menu__ref');
 const SLIDER = document.querySelector('.slider');
 const FIRST_PHONE_SCREEN = document.getElementById('phone1');
 const SECOND_PHONE_SCREEN = document.getElementById('phone2');
+const FORM_NAME = document.querySelector('.form__name');
+const FORM_MAIL = document.querySelector('.form__email');
 let currentSlide = 0;
 let isEnabled = true;
 
@@ -159,20 +161,29 @@ function switchOnOfScreen(e) {
 
 SUBMIT_BUTTON.addEventListener('click', onSubmitClick);
 
-function onSubmitClick() {
+function onSubmitClick(evt) {
+  evt.preventDefault();
   const subject = document.getElementById('subject').value.toString().trim();
   const describe = document.getElementById('describe').value.toString().trim();
   if (subject) {
     document.getElementById('theme').innerText = `Subject: ${subject}`;
   } else {
-    document.getElementById('theme').innerText = 'No subject';
+    document.getElementById('theme').innerText = 'Subject: No subject';
   }
   if (describe) {
     document.getElementById('description').innerText = `Description: ${describe}`;
   } else {
-    document.getElementById('description').innerText = 'No description';
+    document.getElementById('description').innerText = 'Description: No description';
   }
-  document.getElementById('message-block').classList.remove('hidden');
+  if (!FORM_NAME.value && !FORM_NAME.value) {
+    FORM_NAME.classList.add('red');
+    FORM_MAIL.classList.add('red');
+  }
+  else if (FORM_NAME.value && FORM_NAME.value) {
+    FORM_NAME.classList.remove('red');
+    FORM_MAIL.classList.remove('red');
+    document.getElementById('message-block').classList.remove('hidden');
+  }
 }
 
 CLOSE_BUTTON.addEventListener('click', onCloseModal);
